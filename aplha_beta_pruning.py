@@ -1,4 +1,3 @@
-
 import time
 
 class Game:
@@ -54,9 +53,10 @@ class Game:
             return self.current_state[0][2]
 
     # Is the whole board full?
-       "The code scans the entire board, row by row and column by column.
-          If it finds at least one empty cell (.), it concludes that the game hasn't finished, and so it returns None, allowing the game to proceed."
-
+        for i in range(0, 3):
+            for j in range(0, 3):
+                if self.current_state[i][j] == '.':
+                    return None
     # It's a tie!
         return '.'
     def max_alpha_beta(self, alpha, beta):
